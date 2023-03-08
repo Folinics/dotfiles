@@ -112,10 +112,31 @@ echo ✅ Done
 wget -O Office.pkg "https://go.microsoft.com/fwlink/p/?linkid=2009112"
 sudo installer -pkg Office.pkg -target / && rm Office.pkg
 
-
 echo Installing Discord
 brew install --cask discord
 echo ✅ Done
+
+echo Installing Apple Music Discord Rich Text Presence
+brew tap nextfire/tap
+brew install apple-music-discord-rpc
+brew services restart apple-music-discord-rpc
+echo ✅ Done
+
+echo Installing VLC Media Player
+brew install --cask vlc
+echo ✅ Done
+
+echo Installing Sound Control
+brew install --cask sound-control
+echo ✅ Done
+
+echo Installing Parallels
+brew install --cask parallels
+echo ✅ Done
+
+echo Installing Game Capture HD
+wget https://edge.elgato.com/egc/macos/egcm/2.11.14/final/Game_Capture_HD_2.11.14.zip
+
 
 echo Installing mas
 brew install mas
@@ -134,17 +155,11 @@ brew install Slack
 echo ✅ Done
 
 echo Installing Suspicious Package
-wget https://www.mothersruin.com/software/downloads/SuspiciousPackage.dmg
-hdiutil attach SuspiciousPackage.dmg
-cp -R "Suspicious Package.app" ~/Applications/
+brew install --cask suspicious-package
 
 
 echo Installing Plex Media Player
 brew install --cask plex-media-player
-echo ✅ Done
-
-echo Installing mackup
-brew install mackup
 echo ✅ Done
 
 echo Install GitHub Desktop
@@ -156,7 +171,8 @@ brew install docker
 echo ✅ Done
 
 echo Installing DockUtil
-brew install dockutil
+wget "https://github.com/kcrawford/dockutil/releases/download/3.0.2/dockutil-3.0.2.pkg"
+sudo installer -pkg dockutil-3.0.2.pkg -target / && rm dockutil-3.0.2.pkg
 echo ✅ Done
 
 ###
