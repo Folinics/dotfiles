@@ -1,0 +1,122 @@
+#!/bin/bash
+#List of known setting commands for reference
+
+###
+#
+# macOS Settings
+#
+###
+
+# Dark mode
+echo Setting menubar and dock to dark mode
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
+echo ✅ Done
+
+echo Disabling shadows on full-screen screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+echo ✅ Done
+
+echo Setting up top-left hot corner to activate Mission Control
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
+killall Dock
+echo ✅ Done
+
+echo Setting Screenshots to save to "~/Library/CloudStorage/OneDrive-Whatever/Screenshots"
+mkdir ~/Library/CloudStorage/OneDrive-Whatever/Screenshots
+defaults write com.apple.screencapture location "~/Library/CloudStorage/OneDrive-Whatever/Screenshots"
+echo ✅ Done
+
+echo Setting Screenshots to save to "~/Library/CloudStorage/OneDrive-Whatever/scripts"
+mkdir ~/Library/CloudStorage/OneDrive-Whatever/scripts
+defaults write com.apple.screencapture location "~/Library/CloudStorage/OneDrive-Whatever/scripts"
+echo ✅ Done
+
+echo Setting Screenshots to save to "~/Library/CloudStorage/OneDrive-Whatever/repos"
+mkdir ~/Library/CloudStorage/OneDrive-Whatever/repos
+defaults write com.apple.screencapture location "~/Library/CloudStorage/OneDrive-Whatever/repos"
+echo ✅ Done
+
+echo Setting Terminal to default to Homebrew
+defaults write com.apple.Terminal "Default Window Settings" -string Homebrew
+defaults write com.apple.Terminal "Startup Window Settings" -string Homebrew
+echo ✅ Done
+
+echo Enabling indicator lights for open applications in the Dock
+defaults write com.apple.dock show-process-indicators -bool true
+echo ✅ Done
+
+echo Grouping windows by application in Mission Control
+defaults write com.apple.dock expose-group-by-app -bool true
+echo ✅ Done
+
+echo Disabling the Mission Control Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+echo ✅ Done
+
+echo Disabling rearranging Mission Control Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+echo ✅ Done
+
+###
+#
+# Applications
+#
+###
+
+echo Installing mackup
+brew install mackup
+echo ✅ Done
+
+echo Installing Pipenv + pyenv
+brew install pipenv pyenv
+echo ✅ Done
+
+echo Unlinking Python3 to encourage pyenv use
+brew unlink python3
+echo ✅ Done
+
+echo "Installing nvm (Node version management)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+echo ✅ Done
+
+echo Installing Powerline Fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-cascadia-code-pl
+echo ✅ Done
+
+# TODO: Figure out how to silently install Oh-My-ZSH
+echo Installing Oh My Zsh and setting ZSH as default shell
+# TODO: Figure out if we can eliminate the password prompt here when changing shells
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo ✅ Done
+
+echo Installing powerlevel10k ZSH theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+echo ✅ Done
+
+echo Installing KDiff3
+brew install --cask kdiff3
+echo ✅ Done
+
+echo Installing fzf
+brew install fzf
+echo ✅ Done
+
+echo "Setting default branch name to 'main'"
+git config --global init.defaultBranch main
+echo ✅ Done
+
+###
+#
+# Mac App Store
+#
+###
+
+echo Install Affinity Photo 2
+mas install 1616822987
+echo ✅ Done
+
+echo Install Affinity Designer 2
+mas install 1616831348
+echo ✅ Done
