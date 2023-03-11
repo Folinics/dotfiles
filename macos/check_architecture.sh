@@ -11,7 +11,7 @@ processor=$(/usr/sbin/sysctl -n machdep.cpu.brand_string | grep -o "Intel")
 
 # Return 1 for x86_64, 0 for ARM 
 if [[ -n "$processor" ]]; then
-    return 1
+    exit 1
 else
-    return 0
+    exit 0
 fi
