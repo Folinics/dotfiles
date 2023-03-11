@@ -222,7 +222,7 @@ echo Installing iStat Menus...
 brew install --cask istat-menus
 echo ✅ Done
 
-echo Installing MuseScore 3...
+echo Installing MuseScore...
 brew install --cask musescore
 echo ✅ Done
 
@@ -307,10 +307,16 @@ echo ✅ Done
 
 ###
 #
-# Config Files
+# Set up Dock with persistent apps and preferred settings
 #
 ###
 
+# Remove current dock plist
+rm -rf ~/Library/com.apple.dock.plist
+#Copy provided plist
+cp $(pwd)/com.apple.dock.plist ~/Library/com.apple.dock.plist
+#Restart dock
+killall Dock
 
 
 echo SETUP COMPLETE\! PLEASE REBOOT YOUR MACHINE BEFORE GETTING BACK TO WORK\!
