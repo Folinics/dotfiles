@@ -3,8 +3,8 @@
 # Thanks to https://github.com/atomantic/dotfiles for revealing some key macOS settings
 # commands!
 
-#Save script directory
-scriptDirectory = $pwd
+#Save working directory
+scriptDirectory=$(pwd)
 
 echo [Setting up macOS]
 
@@ -27,7 +27,7 @@ source $(pwd)/macos/install_rosetta.sh
 echo ✅ Done
 
 # Save architecture type in variable. 1 for x86_64, 0 for ARM
-architecture_type = $(pwd)/macos/check_architecture.sh
+architecture_type=source $(pwd)/macos/check_architecture.sh
 
 #Install Homebrew
 echo Installing Homebrew
@@ -35,9 +35,6 @@ echo Installing Homebrew
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 echo ✅ Done
-
-# Install Xcode Command Line Tools
-xcode-select --install
 
 ###
 #
@@ -82,11 +79,12 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 echo ✅ Done
 
 echo Add Rename shortcut to Finder
-defaults com.apple.finder NSUserKeyEquivalents -dict-add "Rename" "@r"
+defaults write com.apple.finder NSUserKeyEquivalents -dict-add "Rename" "@r"
 echo ✅ Done
 
-#Turn off folders open in new tabs instead of windows. 
+echo Turn off folders open in new tabs instead of windows. 
 defaults write com.apple.finder FinderSpawnTab -bool false
+echo ✅ Done
 
 echo Restarting Finder
 killall Finder
@@ -129,7 +127,7 @@ echo Installing Spotify...
 brew install --cask spotify
 echo ✅ Done
 
-echo Installing Apple Music Discord Rich Text Presence
+echo Installing Apple Music Discord Rich Text Presence...
 brew tap nextfire/tap
 brew install apple-music-discord-rpc
 brew services restart apple-music-discord-rpc
@@ -197,7 +195,7 @@ brew install --cask suspicious-package
 echo ✅ Done
 
 echo Installing Plex Media Player...
-brew install --cask plex-media-player
+brew install --cask plex
 echo ✅ Done
 
 echo Install GitHub Desktop...
@@ -243,7 +241,7 @@ echo Install Final Cut Pro...
 mas install 424389933
 echo ✅ Done
 
-echo Installing Jolt
+echo Installing Jolt...
 mas install 1437130425
 echo ✅ Done
 

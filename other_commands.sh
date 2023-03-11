@@ -107,6 +107,9 @@ echo "Setting default branch name to 'main'"
 git config --global init.defaultBranch main
 echo ✅ Done
 
+# Install Xcode Command Line Tools
+xcode-select --install
+
 ###
 #
 # Mac App Store
