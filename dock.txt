@@ -1,0 +1,39 @@
+Launchpad	file:///System/Applications/Launchpad.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.launchpad.launcher
+Safari	file:///System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.Safari
+Arc	file:///Applications/Arc.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	company.thebrowser.Browser
+Messages	file:///System/Applications/Messages.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.MobileSMS
+WhatsApp	file:///Applications/WhatsApp.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	desktop.WhatsApp
+Mail	file:///System/Applications/Mail.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.mail
+Photos	file:///System/Applications/Photos.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.Photos
+Maps	file:///System/Applications/Maps.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.Maps
+FaceTime	file:///System/Applications/FaceTime.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.FaceTime
+Calendar	file:///System/Applications/Calendar.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.iCal
+Contacts	file:///System/Applications/Contacts.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.AddressBook
+Reminders	file:///System/Applications/Reminders.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.reminders
+Notes	file:///System/Applications/Notes.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.Notes
+TV	file:///System/Applications/TV.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.TV
+Music	file:///System/Applications/Music.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.Music
+Podcasts	file:///System/Applications/Podcasts.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.podcasts
+News	file:///System/Applications/News.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.news
+App Store	file:///System/Applications/App%20Store.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.AppStore
+Plex	file:///Applications/Plex.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	tv.plex.desktop
+Microsoft Remote Desktop	file:///Applications/Microsoft%20Remote%20Desktop.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.microsoft.rdc.macos
+Home	file:///System/Applications/Home.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.Home
+System Settings	file:///System/Applications/System%20Settings.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.systempreferences
+Quicken	file:///Applications/Quicken.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.quicken.Quicken
+OpenEmu	file:///Applications/OpenEmu.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	org.openemu.OpenEmu
+Dictionary	file:///System/Applications/Dictionary.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.Dictionary
+Screen Sharing	file:///System/Library/CoreServices/Applications/Screen%20Sharing.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.apple.ScreenSharing
+Spotify	file:///Applications/Spotify.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.spotify.client
+Steam	file:///Applications/Steam.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.valvesoftware.steam
+PS Remote Play	file:///Applications/RemotePlay.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.playstation.RemotePlay
+Game Capture HD	file:///Applications/Game%20Capture%20HD.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.elgato.GameCaptureHD
+Dashlane	file:///Applications/Dashlane.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.dashlane.dashlanephonefinal
+Discord	file:///Applications/Discord.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.hnc.Discord
+Microsoft Teams	file:///Applications/Microsoft%20Teams.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.microsoft.teams
+Microsoft Outlook	file:///Applications/Microsoft%20Outlook.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.microsoft.Outlook
+Twitter	file:///Applications/Twitter.app/	persistentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	maccatalyst.com.atebits.Tweetie2
+Break Time	file:///Applications/Parallels%20Toolbox.app/Contents/Applications/Break%20Time.app/	recentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.parallels.toolbox.BreakTime
+Visual Studio Code	file:///Applications/Visual%20Studio%20Code.app/	recentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	com.microsoft.VSCode
+Tabby	file:///Applications/Tabby.app/	recentApps	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	org.tabby
+Downloads	file:///Users/jordanbueno/Downloads/	persistentOthers	/Users/jordanbueno/Library/Preferences/com.apple.dock.plist	

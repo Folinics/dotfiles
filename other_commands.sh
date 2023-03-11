@@ -1,5 +1,5 @@
 #!/bin/bash
-#List of known setting commands for reference
+#List of other commands for reference
 
 ###
 #
@@ -119,4 +119,44 @@ echo ✅ Done
 
 echo Install Affinity Designer 2
 mas install 1616831348
+echo ✅ Done
+
+###
+#
+# Post-Setup Steps
+#
+###
+
+echo Writing a list of additional manual steps to ~/Desktop/NextSteps.txt
+echo $'Configuration:
+[ ] Finder (Finder > Preferences)
+  [ ] Under Sidebar > Favorites, only CHECK the following:
+    [ ] iCloud Drive
+    [ ] Applications
+    [ ] Desktop
+    [ ] Documents
+    [ ] Downloads
+    [ ] mmiller (~/)
+[ ] Dock
+  [ ] Set Download folder to sort by "Date Added"
+  [ ] Set Download folder to display as "Folder"
+  [ ] Set Download folder to view content as "Grid"
+[ ] Terminal (After installing shell themes)
+  [ ] Set Homebrew theme\'s font to the installed Powerline font (12pt)
+  [ ] Check "Use bright colors for bold text"
+[ ] Keyboard (Preferences > Keyboard > Input Sources)
+  [ ] Set up Japanese IME
+    [ ] Uncheck all Input Modes except for default Hiragana
+[ ] Internet Accounts (Preferences > Internet Accounts)
+  [ ] Activate "Contacts" and "Calendars" for any inactive Google accounts"
+
+Arrangement:
+
+- The DOCK\'s pinned applications are typically arranged as such (left-to-right):
+  - Finder, Firefox, Chrome, VS Code, <git client>, <chat clients>,
+- The FINDER\'s sidebar Favorites section is typically arranged as such (top-to-bottom):
+  - iCloud Drive, Desktop, Userfolder (~/), Applications, Repos, Screenshots, Downloads, Documents
+- The MENU BAR\'s bits are typically arranged as such (left-to-right):
+  - 1Password, Volume, Wifi, VPN, Bluetooth, MacOS Battery
+'> ~/Desktop/NextSteps.txt
 echo ✅ Done

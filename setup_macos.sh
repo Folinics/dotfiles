@@ -26,6 +26,9 @@ echo Installing Rosetta 2
 source $(pwd)/macos/install_rosetta.sh
 echo ✅ Done
 
+# Save architecture type in variable. 1 for x86_64, 0 for ARM
+architecture_type = $(pwd)/macos/check_architecture.sh
+
 #Install Homebrew
 echo Installing Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -104,22 +107,36 @@ echo ✅Done
 cd ~/Downloads
 
 # Install wget
-echo Installing wget
+echo Installing wget...
 brew install wget
 echo ✅ Done
 
 # Install Microsoft 365
+echo Installing Microsoft 365...
 wget -O Office.pkg "https://go.microsoft.com/fwlink/p/?linkid=2009112"
 sudo installer -pkg Office.pkg -target / && rm Office.pkg
+echo ✅ Done
 
-echo Installing Discord
+echo Installing Arc...
+brew install --cask arc
+echo ✅ Done
+
+echo Installing Discord...
 brew install --cask discord
+echo ✅ Done
+
+echo Installing Spotify...
+brew install --cask spotify
 echo ✅ Done
 
 echo Installing Apple Music Discord Rich Text Presence
 brew tap nextfire/tap
 brew install apple-music-discord-rpc
 brew services restart apple-music-discord-rpc
+echo ✅ Done
+
+echo Installing Steam...
+brew install --cask steam
 echo ✅ Done
 
 echo Installing VLC Media Player
@@ -134,45 +151,78 @@ echo Installing Parallels
 brew install --cask parallels
 echo ✅ Done
 
-echo Installing Game Capture HD
-wget https://edge.elgato.com/egc/macos/egcm/2.11.14/final/Game_Capture_HD_2.11.14.zip
+echo Installing Quicken...
+brew install --cask quicken
+echo ✅ Done
 
+echo Installing OpenEmu...
+brew install --cask openemu
+echo ✅ Done
 
-echo Installing mas
+echo Installing PS Remote Play...
+wget https://remoteplay.dl.playstation.net/remoteplay/module/mac/RemotePlayInstaller.pkg
+sudo installer -pkg RemotePlayInstaller.pkg -target / && rm RemotePlayInstaller.pkg
+echo ✅ Done
+
+echo Installing Dolphin...
+brew install --cask dolphin
+echo ✅ Done
+
+# ARM Macs do not support Elgato devices that utilize Game Capture HD. Following only executes on Intel Macs.
+if [architecture_type]; then
+  echo Installing Game Capture HD...
+  wget https://edge.elgato.com/egc/macos/egcm/2.11.14/final/Game_Capture_HD_2.11.14.zip
+  unzip Game_Capture_HD_2.11.14.zip
+  mv "Game Capture HD.app" /Applications/
+  rm Game_Capture_HD_2.11.14.zip
+  echo ✅ Done
+else
+  echo Mac with ARM processor detected. Skipping Game Capture HD installation...
+fi
+
+echo Installing mas...
 brew install mas
 echo ✅ Done
 
-echo Installing tabby
+echo Installing tabby...
 brew install tabby
 echo ✅ Done
 
-echo Installing Visual Studio Code
+echo Installing Visual Studio Code...
 brew install --cask visual-studio-code
 echo ✅ Done
 
-echo Installing Slack
-brew install Slack
+echo Installing Suspicious Package...
+brew install --cask suspicious-package
 echo ✅ Done
 
-echo Installing Suspicious Package
-brew install --cask suspicious-package
-
-
-echo Installing Plex Media Player
+echo Installing Plex Media Player...
 brew install --cask plex-media-player
 echo ✅ Done
 
-echo Install GitHub Desktop
+echo Install GitHub Desktop...
 brew install --cask github
 echo ✅ Done
 
-echo Install Docker
+echo Install Docker...
 brew install docker
 echo ✅ Done
 
-echo Installing DockUtil
+echo Installing DockUtil...
 wget "https://github.com/kcrawford/dockutil/releases/download/3.0.2/dockutil-3.0.2.pkg"
 sudo installer -pkg dockutil-3.0.2.pkg -target / && rm dockutil-3.0.2.pkg
+echo ✅ Done
+
+echo Installing Transmission...
+brew install --cask transmission
+echo ✅ Done
+
+echo Installing iStat Menus...
+brew install --cask istat-menus
+echo ✅ Done
+
+echo Installing MuseScore 3...
+brew install --cask musescore
 echo ✅ Done
 
 ###
@@ -181,13 +231,76 @@ echo ✅ Done
 #
 ###
 
-echo Install Microsoft Remote Desktop from Mac App Store
+echo Installing Xcode...
+mas install 497799835
+echo ✅ Done
+
+echo Installing Microsoft Remote Desktop from Mac App Store...
 mas install 1295203466
 echo ✅ Done
 
+echo Install Final Cut Pro...
+mas install 424389933
+echo ✅ Done
 
-echo Install Magnet from Mac App Store
+echo Installing Jolt
+mas install 1437130425
+echo ✅ Done
+
+echo Installing NordVPN...
+mas install 905953485
+echo ✅ Done
+
+echo Installing Magnet from Mac App Store...
 mas install 441258766
+echo ✅ Done
+
+echo Installing Twitter...
+mas install 1482454543
+echo ✅ Done
+
+echo Installing The Unarchiver...
+mas install 425424353
+echo ✅ Done
+
+echo Installing Dashlane...
+mas install 517914548
+echo ✅ Done
+
+echo Installing GarageBand...
+mas install 682658836
+echo ✅ Done
+
+echo Installing Speedtest...
+mas install 1153157709
+echo ✅ Done
+
+echo Installing Amazon Prime Video...
+mas install 545519333
+echo ✅ Done
+
+echo Instaling WhatsApp...
+mas install 1147396723
+echo ✅ Done
+
+echo Installing Bitwarden...
+mas install 1352778147
+echo ✅ Done
+
+echo Installing iMovie...
+mas install 408981434
+echo ✅ Done
+
+echo Installing Slack...
+mas install 803453959
+echo ✅ Done
+
+echo Installing Onigiri...
+mas install 1639917298
+echo ✅ Done
+
+echo Installing Yubico Authenticator...
+mas install 1497506650
 echo ✅ Done
 
 
@@ -200,45 +313,5 @@ echo ✅ Done
 # Add symbolic links to the dotfiles in this directory
 cd $scriptDirectory
 source $(pwd)/add_symlinks.sh
-
-###
-#
-# Post-Setup Steps
-#
-###
-
-echo Writing a list of additional manual steps to ~/Desktop/NextSteps.txt
-echo $'Configuration:
-[ ] Finder (Finder > Preferences)
-  [ ] Under Sidebar > Favorites, only CHECK the following:
-    [ ] iCloud Drive
-    [ ] Applications
-    [ ] Desktop
-    [ ] Documents
-    [ ] Downloads
-    [ ] mmiller (~/)
-[ ] Dock
-  [ ] Set Download folder to sort by "Date Added"
-  [ ] Set Download folder to display as "Folder"
-  [ ] Set Download folder to view content as "Grid"
-[ ] Terminal (After installing shell themes)
-  [ ] Set Homebrew theme\'s font to the installed Powerline font (12pt)
-  [ ] Check "Use bright colors for bold text"
-[ ] Keyboard (Preferences > Keyboard > Input Sources)
-  [ ] Set up Japanese IME
-    [ ] Uncheck all Input Modes except for default Hiragana
-[ ] Internet Accounts (Preferences > Internet Accounts)
-  [ ] Activate "Contacts" and "Calendars" for any inactive Google accounts"
-
-Arrangement:
-
-- The DOCK\'s pinned applications are typically arranged as such (left-to-right):
-  - Finder, Firefox, Chrome, VS Code, <git client>, <chat clients>,
-- The FINDER\'s sidebar Favorites section is typically arranged as such (top-to-bottom):
-  - iCloud Drive, Desktop, Userfolder (~/), Applications, Repos, Screenshots, Downloads, Documents
-- The MENU BAR\'s bits are typically arranged as such (left-to-right):
-  - 1Password, Volume, Wifi, VPN, Bluetooth, MacOS Battery
-'> ~/Desktop/NextSteps.txt
-echo ✅ Done
 
 echo SETUP COMPLETE\! PLEASE REBOOT YOUR MACHINE BEFORE GETTING BACK TO WORK\!
