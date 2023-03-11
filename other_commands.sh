@@ -130,6 +130,10 @@ echo ✅ Done
 #
 ###
 
+# Add symbolic links to the dotfiles in this directory
+cd $scriptDirectory
+source $(pwd)/add_symlinks.sh
+
 echo Writing a list of additional manual steps to ~/Desktop/NextSteps.txt
 echo $'Configuration:
 [ ] Finder (Finder > Preferences)

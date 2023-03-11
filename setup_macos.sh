@@ -33,7 +33,7 @@ architecture_type=source $(pwd)/macos/check_architecture.sh
 echo Installing Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 echo ✅ Done
 
 ###
@@ -112,7 +112,10 @@ echo ✅ Done
 # Install Microsoft 365
 echo Installing Microsoft 365...
 wget -O Office.pkg "https://go.microsoft.com/fwlink/p/?linkid=2009112"
-sudo installer -pkg Office.pkg -target / && rm Office.pkg
+sudo installer -pkg Office.pkg -target /
+#Wait 30 seconds
+sleep 30
+rm -rf Office.pkg
 echo ✅ Done
 
 echo Installing Arc...
@@ -167,7 +170,7 @@ brew install --cask dolphin
 echo ✅ Done
 
 # ARM Macs do not support Elgato devices that utilize Game Capture HD. Following only executes on Intel Macs.
-if [architecture_type]; then
+if [ architecture_type ]; then
   echo Installing Game Capture HD...
   wget https://edge.elgato.com/egc/macos/egcm/2.11.14/final/Game_Capture_HD_2.11.14.zip
   unzip Game_Capture_HD_2.11.14.zip
@@ -308,8 +311,6 @@ echo ✅ Done
 #
 ###
 
-# Add symbolic links to the dotfiles in this directory
-cd $scriptDirectory
-source $(pwd)/add_symlinks.sh
+
 
 echo SETUP COMPLETE\! PLEASE REBOOT YOUR MACHINE BEFORE GETTING BACK TO WORK\!

@@ -9,7 +9,7 @@
 # Save processor 
 processor=$(/usr/sbin/sysctl -n machdep.cpu.brand_string | grep -o "Intel")
 
-# Return integer
+# Return 1 for x86_64, 0 for ARM 
 if [[ -n "$processor" ]]; then
     return 1
 else
