@@ -113,9 +113,6 @@ echo ✅ Done
 echo Installing Microsoft 365...
 wget -O Office.pkg "https://go.microsoft.com/fwlink/p/?linkid=2009112"
 sudo installer -pkg Office.pkg -target /
-#Wait 30 seconds
-sleep 30
-rm -rf Office.pkg
 echo ✅ Done
 
 echo Installing Arc...
@@ -304,6 +301,8 @@ echo Installing Yubico Authenticator...
 mas install 1497506650
 echo ✅ Done
 
+# Clean up
+rm -rf Office.pkg
 
 ###
 #
@@ -311,12 +310,13 @@ echo ✅ Done
 #
 ###
 
+#Change directory
+cd $scriptDirectory
 # Remove current dock plist
-rm -rf ~/Library/com.apple.dock.plist
+rm -rf ~/Library/Preferences/com.apple.dock.plist
 #Copy provided plist
-cp $(pwd)/com.apple.dock.plist ~/Library/com.apple.dock.plist
+cp $(pwd)/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist
 #Restart dock
 killall Dock
-
 
 echo SETUP COMPLETE\! PLEASE REBOOT YOUR MACHINE BEFORE GETTING BACK TO WORK\!
