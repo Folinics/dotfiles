@@ -137,6 +137,10 @@ echo Installing Steam...
 brew install --cask steam
 echo ✅ Done
 
+echo Installing UTM...
+brew install --cask utm
+echo ✅ Done
+
 echo Installing VLC Media Player
 brew install --cask vlc
 echo ✅ Done
